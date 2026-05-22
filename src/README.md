@@ -196,12 +196,41 @@ onBeforeUnmount(() => {
           <div class="logo-glow"></div>
         </div>
         <div class="qq-meta">
-          <p class="qq-label">售后QQ群四</p>
+          <p class="qq-label">售后QQ群四 <span class="qq-full">已满</span></p>
           <p class="qq-number">1093476259</p>
         </div>
         <div class="card-shine"></div>
       </div>
       <div v-if="activeCard === 'qq4'" class="inline-notice">
+        <span class="notice-pill">{{ noticeText }}</span>
+      </div>
+    </div>
+    <div
+      class="qq-card rose-card"
+      role="button"
+      tabindex="0"
+      aria-label="复制售后QQ群五"
+      @click="copyQQ('112422987', 'qq5')"
+      @keydown.enter.prevent="copyQQ('112422987', 'qq5')"
+      @keydown.space.prevent="copyQQ('112422987', 'qq5')"
+    >
+      <div class="card-bg"></div>
+      <div class="card-content">
+        <div class="logo-wrapper">
+          <img
+            class="qq-logo"
+            src="/assets/image/logo/qq.webp"
+            alt="售后QQ群五"
+          />
+          <div class="logo-glow"></div>
+        </div>
+        <div class="qq-meta">
+          <p class="qq-label">售后QQ群五</p>
+          <p class="qq-number">112422987</p>
+        </div>
+        <div class="card-shine"></div>
+      </div>
+      <div v-if="activeCard === 'qq5'" class="inline-notice">
         <span class="notice-pill">{{ noticeText }}</span>
       </div>
     </div>
@@ -233,7 +262,7 @@ onBeforeUnmount(() => {
 
 @media (min-width: 1280px) {
   .qq-groups {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 16px;
   }
 }
@@ -277,6 +306,11 @@ onBeforeUnmount(() => {
   opacity: 0.8;
 }
 
+.rose-card .card-bg {
+  background: linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%);
+  opacity: 0.8;
+}
+
 .qq-card:hover .card-bg {
   opacity: 1;
 }
@@ -309,6 +343,10 @@ onBeforeUnmount(() => {
 
 .amber-card::before {
   background: radial-gradient(circle, rgba(251, 191, 36, 0.4), transparent);
+}
+
+.rose-card::before {
+  background: radial-gradient(circle, rgba(244, 63, 94, 0.35), transparent);
 }
 
 .card-content {
@@ -368,6 +406,10 @@ onBeforeUnmount(() => {
   background: #fde68aff;
 }
 
+.rose-card .logo-glow {
+  background: #fecdd3ff;
+}
+
 .qq-card:hover .logo-glow {
   opacity: 0.9;
   animation: pulse-glow 2s infinite;
@@ -399,6 +441,7 @@ onBeforeUnmount(() => {
 .purple-card .qq-label { color: #7e22ce; }
 .green-card .qq-label { color: #15803d; }
 .amber-card .qq-label { color: #92400e; }
+.rose-card .qq-label { color: #be123c; }
 
 .qq-number {
   margin: 0;
@@ -425,6 +468,10 @@ onBeforeUnmount(() => {
 
 .amber-card .qq-number {
   background-image: linear-gradient(135deg, #d97706, #f59e0b);
+}
+
+.rose-card .qq-number {
+  background-image: linear-gradient(135deg, #e11d48, #fb7185);
 }
 
 .qq-card:hover .qq-label {
@@ -500,6 +547,11 @@ onBeforeUnmount(() => {
               inset 0 0 0 1px rgba(255, 255, 255, 0.6);
 }
 
+.rose-card {
+  box-shadow: 0 10px 30px -10px rgba(244, 63, 94, 0.15),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
 .blue-card:hover {
   box-shadow: 0 20px 40px -10px rgba(14, 165, 233, 0.3),
               inset 0 0 0 1px rgba(255, 255, 255, 0.8);
@@ -517,6 +569,11 @@ onBeforeUnmount(() => {
 
 .amber-card:hover {
   box-shadow: 0 20px 40px -10px rgba(251, 191, 36, 0.3),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+}
+
+.rose-card:hover {
+  box-shadow: 0 20px 40px -10px rgba(244, 63, 94, 0.3),
               inset 0 0 0 1px rgba(255, 255, 255, 0.8);
 }
 
@@ -696,6 +753,10 @@ html[data-theme="dark"] .amber-card .card-bg {
   background: linear-gradient(135deg, rgba(251, 191, 36, 0.08) 0%, rgba(217, 119, 6, 0.12) 100%);
 }
 
+html[data-theme="dark"] .rose-card .card-bg {
+  background: linear-gradient(135deg, rgba(244, 63, 94, 0.08) 0%, rgba(225, 29, 72, 0.12) 100%);
+}
+
 html[data-theme="dark"] .blue-card::before {
   background: radial-gradient(circle, rgba(56, 189, 248, 0.15), transparent);
 }
@@ -712,6 +773,10 @@ html[data-theme="dark"] .amber-card::before {
   background: radial-gradient(circle, rgba(251, 191, 36, 0.15), transparent);
 }
 
+html[data-theme="dark"] .rose-card::before {
+  background: radial-gradient(circle, rgba(244, 63, 94, 0.15), transparent);
+}
+
 html[data-theme="dark"] .qq-card {
   border-color: rgba(255, 255, 255, 0.08);
   background: rgba(30, 30, 35, 0.6);
@@ -721,6 +786,7 @@ html[data-theme="dark"] .blue-card .qq-label { color: #93c5fd; }
 html[data-theme="dark"] .purple-card .qq-label { color: #c4b5fd; }
 html[data-theme="dark"] .green-card .qq-label { color: #86efac; }
 html[data-theme="dark"] .amber-card .qq-label { color: #fcd34d; }
+html[data-theme="dark"] .rose-card .qq-label { color: #fda4af; }
 
 html[data-theme="dark"] .blue-card .qq-number {
   background-image: linear-gradient(135deg, #60a5fa, #93c5fd);
@@ -738,6 +804,10 @@ html[data-theme="dark"] .amber-card .qq-number {
   background-image: linear-gradient(135deg, #fbbf24, #fcd34d);
 }
 
+html[data-theme="dark"] .rose-card .qq-number {
+  background-image: linear-gradient(135deg, #fb7185, #fda4af);
+}
+
 html[data-theme="dark"] .blue-card .logo-glow {
   background: rgba(96, 165, 250, 0.25);
 }
@@ -752,6 +822,10 @@ html[data-theme="dark"] .green-card .logo-glow {
 
 html[data-theme="dark"] .amber-card .logo-glow {
   background: rgba(251, 191, 36, 0.25);
+}
+
+html[data-theme="dark"] .rose-card .logo-glow {
+  background: rgba(251, 113, 133, 0.25);
 }
 
 html[data-theme="dark"] .card-shine {
@@ -778,6 +852,11 @@ html[data-theme="dark"] .amber-card {
               inset 0 0 0 1px rgba(251, 191, 36, 0.15);
 }
 
+html[data-theme="dark"] .rose-card {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5),
+              inset 0 0 0 1px rgba(251, 113, 133, 0.15);
+}
+
 html[data-theme="dark"] .blue-card:hover {
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6),
               inset 0 0 0 1px rgba(96, 165, 250, 0.3);
@@ -796,6 +875,11 @@ html[data-theme="dark"] .green-card:hover {
 html[data-theme="dark"] .amber-card:hover {
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6),
               inset 0 0 0 1px rgba(251, 191, 36, 0.3);
+}
+
+html[data-theme="dark"] .rose-card:hover {
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6),
+              inset 0 0 0 1px rgba(251, 113, 133, 0.3);
 }
 
 html[data-theme="dark"] .qq-full {
