@@ -2204,6 +2204,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vuepress/plugin-slimsearch@patch:@vuepress/plugin-slimsearch@npm%3A2.0.0-rc.128#~/.yarn/patches/@vuepress-plugin-slimsearch-npm-2.0.0-rc.128-d327e05b55.patch":
+  version: 2.0.0-rc.128
+  resolution: "@vuepress/plugin-slimsearch@patch:@vuepress/plugin-slimsearch@npm%3A2.0.0-rc.128#~/.yarn/patches/@vuepress-plugin-slimsearch-npm-2.0.0-rc.128-d327e05b55.patch::version=2.0.0-rc.128&hash=5e0a2f"
+  dependencies:
+    "@vuepress/helper": "npm:2.0.0-rc.128"
+    "@vueuse/core": "npm:^14.2.1"
+    cheerio: "npm:^1.2.0"
+    slimsearch: "npm:^2.3.0"
+    vue: "npm:^3.5.31"
+  peerDependencies:
+    vuepress: 2.0.0-rc.28
+  checksum: 10c0/23e03f718adcc0d04c7590e6c09144173478d0ee66fa1f9e5819d148db3704f0c28fdf7586fcb30aeb2199246ed2a843cfeb8aa99842835a6c83f2438c1de975
+  languageName: node
+  linkType: hard
+
 "@vuepress/plugin-theme-data@npm:2.0.0-rc.128":
   version: 2.0.0-rc.128
   resolution: "@vuepress/plugin-theme-data@npm:2.0.0-rc.128"
@@ -4137,7 +4152,7 @@ __metadata:
   resolution: "packy-docs@workspace:."
   dependencies:
     "@vuepress/bundler-vite": "npm:2.0.0-rc.28"
-    "@vuepress/plugin-slimsearch": "npm:2.0.0-rc.128"
+    "@vuepress/plugin-slimsearch": "patch:@vuepress/plugin-slimsearch@npm%3A2.0.0-rc.128#~/.yarn/patches/@vuepress-plugin-slimsearch-npm-2.0.0-rc.128-d327e05b55.patch"
     sass-embedded: "npm:^1.99.0"
     vue: "npm:^3.5.33"
     vuepress: "npm:2.0.0-rc.28"

@@ -3,5 +3,6 @@ node_modules
 **/dist/
 **/.cache/
 **/.temp/
-.yarn
+.yarn/*
+!.yarn/patches
 .idea/
