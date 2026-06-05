@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.28",
-    "@vuepress/plugin-slimsearch": "2.0.0-rc.128",
+    "@vuepress/plugin-slimsearch": "patch:@vuepress/plugin-slimsearch@npm%3A2.0.0-rc.128#~/.yarn/patches/@vuepress-plugin-slimsearch-npm-2.0.0-rc.128-d327e05b55.patch",
     "sass-embedded": "^1.99.0",
     "vue": "^3.5.33",
     "vuepress": "2.0.0-rc.28",
