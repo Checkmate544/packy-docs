@@ -156,7 +156,7 @@ export default sidebar({
             ],
         },
         {
-            text: "进阶玩法",
+            text: "第三方接入",
             icon: "noto:fire",
             prefix: "advanced/",
             collapsible: false,
@@ -180,6 +180,11 @@ export default sidebar({
                     text: "OpenClaw",
                     icon: "noto:lobster",
                     link: "OpenClaw.md",
+                },
+                {
+                    text: "Hermes",
+                    icon: "game-icons:caduceus",
+                    link: "Hermes.md",
                 },
                 {
                     text: "DS接入CC",
